@@ -1,0 +1,15 @@
+<h1>This is where you can Register your Account</h1>
+
+<%= form_for [@user] do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<%= f.label :password %>
+<%= f.text_field :password_digest %>
+
+<%= f.submit %>
+
+<% end %>
