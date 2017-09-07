@@ -19,7 +19,7 @@ feature "Visitor can visit the root and see a welcome page" do
 
     click_on "Register Account"
 
-    expect(current_path).to eq(new_user_path)
+    expect(current_path).to eq(register_path)
 
     fill_in "user[name]", with: "test"
     fill_in "user[email]", with: "test@test.com"
