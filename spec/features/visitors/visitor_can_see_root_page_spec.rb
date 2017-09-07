@@ -32,7 +32,7 @@ feature "Visitor can visit the root and see a welcome page" do
     # This needs to be a flash message
   end
 
-  scenario "A visitor can click on login to log into account" do
+  scenario "a visitor can click on login to log into account" do
     user = User.create(name: "test", email: "test@test.com", password: "testing")
 
     visit '/'
