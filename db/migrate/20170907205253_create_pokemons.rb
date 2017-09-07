@@ -5,6 +5,8 @@ class CreatePokemons < ActiveRecord::Migration[5.1]
       t.integer :health
       t.integer :power
       t.integer :speed
+
+      t.timestamps
     end
   end
 end
