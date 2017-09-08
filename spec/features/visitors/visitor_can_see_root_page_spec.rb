@@ -30,6 +30,7 @@ feature "Visitor can visit the root and see a welcome page" do
     expect(current_path).to eq("/")
     expect(page).to have_content "Your account was successfully created"
     expect(User.all.count).to eq(1)
+    # I need a sad path for this, to see what happens when registering fails
   end
 
   scenario "a visitor can click on login to log into account" do
@@ -37,7 +38,7 @@ feature "Visitor can visit the root and see a welcome page" do
 
     visit '/'
 
-    click_on "Login User"
+    click_on "Log in"
 
     expect(current_path).to eq(login_path)
 
