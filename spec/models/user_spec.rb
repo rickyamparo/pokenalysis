@@ -6,6 +6,7 @@ feature User do
 
       scenario "is invalid without a name" do
         user = User.new(email: "test@test.com", password: "testing")
+
         expect(user).to be_invalid
       end
 
