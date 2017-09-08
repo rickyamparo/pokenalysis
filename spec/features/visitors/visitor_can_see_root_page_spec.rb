@@ -29,7 +29,7 @@ feature "Visitor can visit the root and see a welcome page" do
 
     expect(current_path).to eq("/")
     expect(page).to have_content "Your account was successfully created"
-    # This needs to be a flash message
+    expect(User.all.count).to eq(1)
   end
 
   scenario "a visitor can click on login to log into account" do
