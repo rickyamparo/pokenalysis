@@ -29,8 +29,8 @@ feature "User can visit the root page and see a welcome page" do
 
     expect(page)
 
-    select pokemon_1.name, from: "player[pokemon_id]"
-    select pokemon_2.name, from: "cpu[pokemon_id]"
+    select pokemon_1.name, from: "post[pokemon_1_id]"
+    select pokemon_2.name, from: "post[pokemon_2_id]"
     # need to create a drop down with .collection_select in the view
     # need to figure out how to keep drop downs as seperate items.
 
