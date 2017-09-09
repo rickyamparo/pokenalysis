@@ -1,1 +1,11 @@
 <h1>This is the Pokenalysis Battle Page</h1>
+
+<%= form_for [@pokemonbattle] do |f| %>
+
+<%= f.label :pokemon_1 %>
+<%= f.collection_select :pokemon_1_id, Pokemon.all, :id, :name %>
+
+<%= f.label :pokemon_2 %>
+<%= f.collection_select :pokemon_2_id, Pokemon.all, :id, :name %>
+
+<% end %>
