@@ -31,20 +31,20 @@ feature "User can visit the root page and see a welcome page" do
 
     select pokemon_1.name, from: "post[pokemon_1_id]"
     select pokemon_2.name, from: "post[pokemon_2_id]"
-    # need to create a drop down with .collection_select in the view
-    # need to figure out how to keep drop downs as seperate items.
 
     click_on "Battle"
 
-    expect(page).to have_content "#{pokemon_1.name} was the winner"
+    expect(page).to have_content("#{pokemon_1.name} was the winner")
   end
 
   scenario "When a user clicks on the pokemon database link" do
     user = User.create(name: "test", email: "test@test.com", password: "testing")
-    # need to figure out how to actually have capybara logged in.
-    # Could possibly set the session[user_id] right in capybara.
-    pokemon_1 = Pokemon.create(name: "Pikachu", health: 100, attack: 100, speed: 200)
-    pokemon_2 = Pokemon.create(name: "Clefairy", health: 200, attack: 50, speed: 100)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    pokemon_1 = Pokemon.create(name: "Pikachu", health: 100, power: 100, speed: 200)
+    pokemon_2 = Pokemon.create(name: "Clefairy", health: 200, power: 50, speed: 100)
+
+    visit '/database'
 
     select pokemon_1.name, from: "pokedex[pokemon_id]"
 

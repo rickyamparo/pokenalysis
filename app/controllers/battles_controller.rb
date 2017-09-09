@@ -9,6 +9,7 @@ class BattlesController < ApplicationController
     winner = decide_winner(@pokemon_1, @pokemon_2)
     @battle = Battle.create(winner: winner, pokemon_1: @pokemon_1.name, pokemon_2: @pokemon_2.name)
     flash[:winner] = "#{winner.name} was the winner"
+    redirect_to battle_path
   end
 
   private
