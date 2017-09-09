@@ -46,6 +46,8 @@ feature "User can visit the root page and see a welcome page" do
 
     visit '/database'
 
+    save_and_open_page
+
     select pokemon_1.name, from: "pokedex[pokemon_id]"
 
     expect(page).to have_content "Health = 100"
