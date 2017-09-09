@@ -5,7 +5,8 @@ class DatabaseController < ApplicationController
 
 
   def create
-    binding.pry
+    @current_pokemon = Pokemon.find(params[:post][:pokemon_id])
+    render :index
   end
 
 end

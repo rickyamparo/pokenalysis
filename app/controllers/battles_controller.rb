@@ -23,5 +23,6 @@ class BattlesController < ApplicationController
       pokemon_2
     end
   end
+  # Need to add a condition for when it's a draw
 
 end

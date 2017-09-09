@@ -8,3 +8,9 @@
 <%= submit_tag("Pull Up Stats") %>
 
 <% end %>
+
+<% if @current_pokemon != nil %>
+  <h3>This pokemon's health is: <%= @current_pokemon.health %></h3> <br>
+  <h3>This pokemon's power is: <%= @current_pokemon.power %></h3> <br>
+  <h3>This pokemon's speed is: <%= @current_pokemon.speed %></h3> <br>
+<% end  %>
