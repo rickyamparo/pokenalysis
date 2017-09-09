@@ -4,8 +4,7 @@ feature "User can visit the root page and see a welcome page" do
   scenario "a user visits the home page and sees the welcome page" do
     user = User.create(name: "test", email: "test@test.com", password: "testing")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    # need to figure out how to actually have capybara logged in.
-    # Could possibly set the session[user_id] right in capybara.
+
     visit '/'
 
     expect(page).to have_link("The Battle Page")
@@ -19,10 +18,10 @@ feature "User can visit the root page and see a welcome page" do
 
   scenario "When a user clicks on the battle page link" do
     user = User.create(name: "test", email: "test@test.com", password: "testing")
-    # need to figure out how to actually have capybara logged in.
-    # Could possibly set the session[user_id] right in capybara.
-    pokemon_1 = Pokemon.create(name: "Pikachu", health: 100, attack: 100, speed: 200)
-    pokemon_2 = Pokemon.create(name: "Clefairy", health: 200, attack: 50, speed: 100)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    pokemon_1 = Pokemon.create(name: "Pikachu", health: 100, power: 100, speed: 200)
+    pokemon_2 = Pokemon.create(name: "Clefairy", health: 200, power: 50, speed: 100)
 
     visit '/'
 
