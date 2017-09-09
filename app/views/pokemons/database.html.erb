@@ -1,1 +1,10 @@
 <h1>This is the Pokenalysis Database</h1>
+
+<%= form_tag do %>
+
+<%= label_tag :pokemon %>
+<%= collection_select :post, :pokemon_id, Pokemon.all, :id, :name %>
+
+<%= submit_tag("Pull Up Stats") %>
+
+<% end %>
