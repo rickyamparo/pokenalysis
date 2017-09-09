@@ -42,8 +42,8 @@ feature "Visitor can visit the root and see a welcome page" do
 
     expect(current_path).to eq(login_path)
 
-    fill_in "user[email]", with: "test@test.com"
-    fill_in "user[password]", with: "testing"
+    fill_in "session[email]", with: "test@test.com"
+    fill_in "session[password]", with: "testing"
 
     click_on "Login"
 
