@@ -27,7 +27,7 @@ feature "User can visit the root page and see a welcome page" do
 
     click_on "The Battle Page"
 
-    expect(page)
+    expect(current_path).to eq('/battle')
 
     select pokemon_1.name, from: "post[pokemon_1_id]"
     select pokemon_2.name, from: "post[pokemon_2_id]"

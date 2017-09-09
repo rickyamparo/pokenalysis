@@ -4,6 +4,7 @@ class BattlesController < ApplicationController
   end
 
   def create
+    @battle.create()
   end
 
 end

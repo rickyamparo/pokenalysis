@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/battle', to: 'pokemons#battle'
+  # Switch battle action from pokemons controller to battles controller
+  post '/battle', to: 'battles#create'
   get '/database', to: 'pokemons#database'
 
   resources :users, only: [:new, :create]
