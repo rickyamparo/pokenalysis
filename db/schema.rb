@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20170909205548) do
 
   create_table "battles", force: :cascade do |t|
     t.string "winner"
+    t.string "pokemon_1"
+    t.string "pokemon_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
