@@ -49,21 +49,21 @@ feature "User can visit the root page and see a welcome page" do
     select pokemon_1.name, from: "post[pokemon_id]"
 
     expect(page).to have_content "Health = 100"
-    expect(page).to have_content "Attack = 100"
+    expect(page).to have_content "Power = 100"
     expect(page).to have_content "Speed = 100"
 
     expect(page).to_not have_content "Health = 200"
-    expect(page).to_not have_content "Attack = 50"
+    expect(page).to_not have_content "Power = 50"
     expect(page).to_not have_content "Speed = 100"
 
     select pokemon_2.name, from: "pokedex[pokemon_id]"
 
     expect(page).to have_content "Health = 200"
-    expect(page).to have_content "Attack = 50"
+    expect(page).to have_content "Power = 50"
     expect(page).to have_content "Speed = 100"
 
     expect(page).to_not have_content "Health = 100"
-    expect(page).to_not have_content "Attack = 100"
+    expect(page).to_not have_content "Power = 100"
     expect(page).to_not have_content "Speed = 100"
   end
 

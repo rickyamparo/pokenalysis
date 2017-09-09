@@ -5,6 +5,7 @@ class DatabaseController < ApplicationController
 
 
   def create
+    binding.pry
   end
 
 end
