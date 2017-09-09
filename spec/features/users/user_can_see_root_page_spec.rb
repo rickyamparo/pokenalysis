@@ -3,17 +3,18 @@ require 'rails_helper'
 feature "User can visit the root page and see a welcome page" do
   scenario "a user visits the home page and sees the welcome page" do
     user = User.create(name: "test", email: "test@test.com", password: "testing")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     # need to figure out how to actually have capybara logged in.
     # Could possibly set the session[user_id] right in capybara.
     visit '/'
 
-    expect(page).to have_link(battle_path)
-    expect(page).to have_link(pokemon_db_path)
-    expect(page).to have_link(logout_path)
+    expect(page).to have_link("The Battle Page")
+    expect(page).to have_link("Pokemon Database")
+    expect(page).to have_link("Logout")
 
-    expect(page).to_not have_link(analysis_path)
-    expect(page).to_not have_link(new_user_path)
-    expect(page).to_not have_link(login_path)
+    expect(page).to_not have_link("Battle Analysis")
+    expect(page).to_not have_link("Register Account")
+    expect(page).to_not have_link("Log in")
   end
 
   scenario "When a user clicks on the battle page link" do
@@ -57,7 +58,7 @@ feature "User can visit the root page and see a welcome page" do
     expect(page).to_not have_content "Speed = 100"
 
     select pokemon_2.name, from: "pokedex[pokemon_id]"
-    
+
     expect(page).to have_content "Health = 200"
     expect(page).to have_content "Attack = 50"
     expect(page).to have_content "Speed = 100"

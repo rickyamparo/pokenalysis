@@ -1,4 +1,8 @@
 <h1>Welcome to the Pokenalysis App!</h1>
 
-<%= link_to "Log in", login_path %>
-<%= link_to "Register Account", new_user_path %>
+<% if current_user %>
+  <%= link_to "The Battle Page", battle_path %>
+<% else %>
+  <%= link_to "Log in", login_path %>
+  <%= link_to "Register Account", new_user_path %>
+<% end %>
