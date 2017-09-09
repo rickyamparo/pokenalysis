@@ -1,7 +1,7 @@
 class PokemonsController < ApplicationController
 
   def battle
-    @pokemonbattle = PokemonBattle.new
+    @battle = Battle.new
   end
 
   def database
