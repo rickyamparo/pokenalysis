@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get '/battle', to: 'pokemons#battle'
   # Switch battle action from pokemons controller to battles controller
   post '/battle', to: 'battles#create'
-  get '/database', to: 'pokemons#database'
-
+  get '/database', to: 'database#index'
+  post '/database', to: 'database#create'
+  
   resources :users, only: [:new, :create]
 end

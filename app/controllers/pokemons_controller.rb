@@ -7,4 +7,7 @@ class PokemonsController < ApplicationController
   def database
   end
 
+  def create
+  end
+
 end
