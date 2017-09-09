@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/battle', to: 'pokemons#battle'
+  get '/database', to: 'pokemons#database'
 
   resources :users, only: [:new, :create]
 end
