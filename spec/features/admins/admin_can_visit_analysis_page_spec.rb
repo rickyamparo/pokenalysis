@@ -18,6 +18,12 @@ feature "Admin can visit Battle Analysis Page" do
     user_2 = User.create(name: "stu", email: "stu@stu.com", password: "stuing")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-    
+    visit '/'
+
+    click_on "Battle Analysis"
+
+    select user_1.email, from: "post[user_id]"
+
+    click_on "Inspect"
   end
 end
