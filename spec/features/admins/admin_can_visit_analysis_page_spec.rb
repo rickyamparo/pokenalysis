@@ -39,5 +39,8 @@ feature "Admin can visit Battle Analysis Page" do
     expect(page).to have_content "This user's name is ricky"
     expect(page).to have_content "This user's email is ricky@ricky.com"
     expect(page).to have_content "This user's role is default"
+
+    expect(page).to have_content "This user had a battle between Pikachu and Clefairy"
+    expect(page).to have_content "The winner was Pikachu"
   end
 end
