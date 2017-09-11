@@ -7,7 +7,7 @@ class BattlesController < ApplicationController
     @pokemon_1 = Pokemon.find(params[:post][:pokemon_1_id])
     @pokemon_2 = Pokemon.find(params[:post][:pokemon_2_id])
     winner = decide_winner(@pokemon_1, @pokemon_2)
-    @battle = Battle.create(winner: winner.name, pokemon_1: @pokemon_1.name, pokemon_2: @pokemon_2.name)
+    @battle = Battle.create(winner: winner.name, pokemon_1: @pokemon_1.name, pokemon_2: @pokemon_2.name, user_id: session[:user_id])
     PokemonBattle.create(pokemon: @pokemon_1, battle: @battle)
     PokemonBattle.create(pokemon: @pokemon_2, battle: @battle)
     if winner.nil?
