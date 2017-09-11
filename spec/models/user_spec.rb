@@ -31,12 +31,12 @@ feature User do
     context "role attribute" do
       scenario "role is defaulting to 0" do
         user = User.new(name: "test", email: "test@test.com", password: "testing")
-        expect(user.role).to eq(0)
+        expect(user.role).to eq("default")
       end
 
       scenario "role can be overwritten" do
         user = User.new(name: "test", email: "test@test.com", password: "testing", role: 1)
-        expect(user.role).to eq(1)
+        expect(user.role).to eq("admin")
       end
     end
   end
