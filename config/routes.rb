@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   get '/database', to: 'database#index'
   post '/database', to: 'database#create'
 
+  get '/battle_analysis', to: 'analysis#index'
+
   resources :users, only: [:new, :create]
 end
