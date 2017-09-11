@@ -36,8 +36,6 @@ feature "Admin can visit Battle Analysis Page" do
 
     click_on "Inspect"
 
-    save_and_open_page
-
     expect(page).to have_content "This user's name is ricky"
     expect(page).to have_content "This user's email is ricky@ricky.com"
     expect(page).to have_content "This user's role is default"

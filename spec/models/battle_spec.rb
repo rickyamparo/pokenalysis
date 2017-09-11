@@ -22,7 +22,8 @@ feature Battle do
 
     context "valid attributes" do
        scenario "is valid with a winner, pokemon_1 and pokemon_2" do
-         battle = Battle.new(winner: "Rhydon",pokemon_1: "Rhydon", pokemon_2: "Bulbasaur")
+         user = User.create(name: "test", email: "test@test.com", password: "testing")
+         battle = Battle.new(winner: "Rhydon", pokemon_1: "Rhydon", pokemon_2: "Bulbasaur", user_id: user.id)
          expect(battle).to be_valid
        end
     end

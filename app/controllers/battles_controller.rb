@@ -13,7 +13,7 @@ class BattlesController < ApplicationController
     if winner.nil?
       flash[:draw] = "This battle was a draw"
     else
-      flash[:winner] = "#{winner} was the winner"
+      flash[:winner] = "#{winner.name} was the winner"
     end
     redirect_to battle_path
   end
