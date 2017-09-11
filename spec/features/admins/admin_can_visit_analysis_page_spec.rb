@@ -9,6 +9,6 @@ feature "Admin can visit Battle Analysis Page" do
 
     click_on "Battle Analysis"
 
-    expect(current_page).to eq(battle_analysis_path)
+    expect(current_path).to eq(battle_analysis_path)
   end
 end
