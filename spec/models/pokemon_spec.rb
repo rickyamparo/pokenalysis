@@ -28,7 +28,7 @@ feature Pokemon do
 
     context "valid attributes" do
       scenario "is valid with name, health, power, speed attributes" do
-        pokemon = Pokemon.new(name: "Pikachu", health: 100, power: 100, speed: 100)
+        pokemon = Pokemon.new(name: "Pikachu", health: 100, power: 100, speed: 200)
         expect(pokemon).to be_valid
       end
     end

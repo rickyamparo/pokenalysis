@@ -1,4 +1,5 @@
 class Battle < ApplicationRecord
-  has_many :pokemonbattles
-  has_many :pokemon, through: :pokemonbattles
+  validates :winner, :pokemon_1, :pokemon_2, presence: true
+  has_many :pokemon_battles
+  has_many :pokemon, through: :pokemon_battles
 end
