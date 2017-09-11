@@ -21,7 +21,7 @@ feature "Admin can visit Battle Analysis Page" do
     pokemon_1 = Pokemon.create(name: "Pikachu", health: 100, power: 100, speed: 200)
     pokemon_2 = Pokemon.create(name: "Clefairy", health: 200, power: 50, speed: 100)
 
-    battle = Battle.create(winner: pokemon_1, pokemon_1: pokemon_1.name, pokemon_2: pokemon_2.name)
+    battle = Battle.create(winner: pokemon_1.name, pokemon_1: pokemon_1.name, pokemon_2: pokemon_2.name, user_id: user_1.id)
 
     PokemonBattle.create(pokemon: pokemon_1, battle: battle)
     PokemonBattle.create(pokemon: pokemon_2, battle: battle)
@@ -35,6 +35,8 @@ feature "Admin can visit Battle Analysis Page" do
     select user_1.email, from: "post[user_id]"
 
     click_on "Inspect"
+
+    save_and_open_page
 
     expect(page).to have_content "This user's name is ricky"
     expect(page).to have_content "This user's email is ricky@ricky.com"

@@ -10,7 +10,14 @@
 <% end %>
 
 <% if @current_user != nil %>
-  <h3>This user's name is <%= @current_user.name %> </h3> <br>
-  <h3>This user's email is <%= @current_user.email %> </h3> <br>
-  <h3>This user's role is <%= @current_user.role %> </h3> <br>
+  <h4>This user's name is <%= @current_user.name %> </h4> <br>
+  <h4>This user's email is <%= @current_user.email %> </h4> <br>
+  <h4>This user's role is <%= @current_user.role %> </h4> <br>
+  <% @current_user.battles.each do |battle|  %>
+    <ol>
+      <li> This user had a battle between <%= battle.pokemon_1 %> and <%= battle.pokemon_2 %> <br>
+        The winner was <%= battle.winner %>
+      </li>
+    </ol>
+  <% end  %>
 <% end  %>

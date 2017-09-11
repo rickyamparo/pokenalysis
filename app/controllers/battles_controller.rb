@@ -7,13 +7,13 @@ class BattlesController < ApplicationController
     @pokemon_1 = Pokemon.find(params[:post][:pokemon_1_id])
     @pokemon_2 = Pokemon.find(params[:post][:pokemon_2_id])
     winner = decide_winner(@pokemon_1, @pokemon_2)
-    @battle = Battle.create(winner: winner, pokemon_1: @pokemon_1.name, pokemon_2: @pokemon_2.name)
+    @battle = Battle.create(winner: winner.name, pokemon_1: @pokemon_1.name, pokemon_2: @pokemon_2.name)
     PokemonBattle.create(pokemon: @pokemon_1, battle: @battle)
     PokemonBattle.create(pokemon: @pokemon_2, battle: @battle)
     if winner.nil?
       flash[:draw] = "This battle was a draw"
     else
-      flash[:winner] = "#{winner.name} was the winner"
+      flash[:winner] = "#{winner} was the winner"
     end
     redirect_to battle_path
   end
