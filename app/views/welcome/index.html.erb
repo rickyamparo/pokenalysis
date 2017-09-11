@@ -7,3 +7,7 @@
   <%= link_to "Log in", login_path %><br>
   <%= link_to "Register Account", new_user_path %><br>
 <% end %>
+
+<% if current_user.admin? %>
+  <%= link_to "Battle Analysis", battle_analysis_path %>
+<% end %>
