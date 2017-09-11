@@ -1,1 +1,10 @@
 <h1>This is the Battle Analysis Page</h1>
+
+<%= form_tag do %>
+
+<%= label_tag :user %>
+<%= collection_select :post, :user_id, User.all, :id, :email %>
+
+<%= submit_tag("Inspect")  %>
+
+<% end %>
