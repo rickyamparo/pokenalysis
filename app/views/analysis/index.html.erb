@@ -8,3 +8,10 @@
 <%= submit_tag("Inspect")  %>
 
 <% end %>
+
+<% if @current_user != nil %>
+  <h3>This user's name is <%= @current_user.name %> </h3> <br>
+  <h3>This user's email is <%= @current_user.email %> </h3> <br>
+  <h3>This user's password is <%= @current_user.password %> </h3> <br>
+  <h3>This user's role is <%= @current_user.role %> </h3> <br>
+<% end  %>
